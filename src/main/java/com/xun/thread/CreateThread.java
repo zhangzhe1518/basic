@@ -6,7 +6,7 @@ package com.xun.thread;
  * 1.通过继承Thread类
  * 2.重写Thread类的run()方法，将此线程要执行的操作声明在run方法中
  * 3.创建Thread类的对象
- * 4.调用Thread的start()方法
+ * 4.调用Thread的start()方法(start方法作用：启动当前线程并调用run方法)
  */
 
 public class CreateThread {
