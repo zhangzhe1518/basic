@@ -11,6 +11,10 @@ package com.xun.thread;
  * 6.yidle()：释放当前cpu的执行权
  * 7.join()：在线程A中调用线程B的join()方法，此时线程A就要进入阻塞状态等待线程B执行完以后继续执行抢夺cpu资源
  * 8.sleep()：使当前线程进入睡眠状态并让出cpu资源，指定时间到了继续抢夺cpu资源
+ *
+ * 线程的优先级
+ * 1.获取当前线程的优先级getPriority()
+ * 2.设置当前线程的优先级setPriority()
  */
 public class ThreadMethods {
 
@@ -24,7 +28,7 @@ public class ThreadMethods {
         Thread.currentThread().setName("main线程");
         for (int i = 0; i < 100; i++) {
             if(i % 2 != 0){
-                System.out.println(Thread.currentThread().getName()+"->"+i);
+                System.out.println(Thread.currentThread().getName()+"->"+i+"线程的优先级："+Thread.currentThread().getPriority());
             }
             //测试join方法，使当前线程进入阻塞状态，等代要join的线程执行完毕
             if(i==1){
@@ -45,7 +49,7 @@ public class ThreadMethods {
         public void run() {
             for (int i = 0; i < 100; i++) {
                 if (i % 2 == 0) {
-                    System.out.println(Thread.currentThread().getName() + "->" + i);
+                    System.out.println(Thread.currentThread().getName() + "->" + i+"线程的优先级："+Thread.currentThread().getPriority());
                     try {
                         sleep(100L);
                     } catch (InterruptedException e) {
