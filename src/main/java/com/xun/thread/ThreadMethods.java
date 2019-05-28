@@ -12,6 +12,10 @@ package com.xun.thread;
  * 7.join()：在线程A中调用线程B的join()方法，此时线程A就要进入阻塞状态等待线程B执行完以后继续执行抢夺cpu资源
  * 8.sleep()：使当前线程进入睡眠状态并让出cpu资源，指定时间到了继续抢夺cpu资源
  *
+ * Object类的常用方法
+ * 1.notify()：随机唤醒一个处于等待状态的线程
+ * 2.notifyAll()：唤醒所有处于等待状态的线程
+ *
  * 线程的优先级
  * 1.获取当前线程的优先级getPriority()
  * 2.设置当前线程的优先级setPriority()
