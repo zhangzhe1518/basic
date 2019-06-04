@@ -1,6 +1,5 @@
 package com.xun.thread.safe;
 
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
