@@ -16,34 +16,29 @@ import java.util.concurrent.*;
 public class ThreadPool {
 
     public static void main(String[] args) {
-        LinkedBlockingQueue queue = new LinkedBlockingQueue(3);
-        ExecutorService service = Executors.newFixedThreadPool(5);
-        ExecutorService service1 = Executors.newCachedThreadPool();
-        ExecutorService service2 = Executors.newScheduledThreadPool(10);
-        ExecutorService service3 = Executors.newSingleThreadExecutor();
-        ExecutorService service4 = Executors.newWorkStealingPool(10);
-        Future future = service.submit(new ImplCallable());
+
+        //一池固定数线程
+        ExecutorService threadPool1 = Executors.newFixedThreadPool(5);
+        //一池一个线程
+        ExecutorService threadPool2 = Executors.newSingleThreadExecutor();
+        //一池N线程
+        ExecutorService threadPool3 = Executors.newCachedThreadPool();
+
         try {
-            Object o = future.get();
-            System.out.println(o);
-        } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
-        }
-        service.shutdown();
-    }
-
-    static class ImplCallable implements Callable {
-
-        @Override
-        public Object call() throws Exception {
-            int sum = 0;
-            for (int i = 0; i <= 100; i++) {
-                if(i % 2 == 0){
-                    System.out.println(Thread.currentThread().getName()+":"+i);
-                    sum = sum+i;
-                }
+            for (int i = 0; i < 10; i++) {
+                threadPool3.execute(() -> {
+                    System.out.println(Thread.currentThread().getName()+"：办理业务");
+                });
             }
-            return sum;
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally{
+            //关闭线程池
+            threadPool1.shutdown();
         }
+
+
     }
+
+
 }
