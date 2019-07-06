@@ -1,5 +1,9 @@
 package com.xun.proxy.jdk;
 
+/**
+ * @author zhangzhe
+ * 被代理对象
+ */
 public class Man implements Person{
 
     @Override

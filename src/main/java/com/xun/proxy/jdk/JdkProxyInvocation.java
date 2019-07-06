@@ -6,16 +6,16 @@ import java.util.Arrays;
 
 /**
  * @author zhangzhe
+ * Jdk的动态代理类
  * jdk的动态代理：实现InvocationHandler接口重写invoke方法
  */
 public class JdkProxyInvocation implements InvocationHandler {
 
-    //目标对象
+    //目标对象（被代理的类）
     private Object target;
 
-
     /**
-     * 声明动态代理类的构造函数把代理对象注入
+     * 声明动态代理类的构造函数把要代理的对象注入动态代理类中
      * @param target 目标对象
      */
     public JdkProxyInvocation(Object target) {
