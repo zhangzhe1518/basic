@@ -17,6 +17,6 @@ public class JdkProxytest {
                 new JdkProxyInvocation(man)
         );
 
-        person.say("寻",23);
+        person.eat("寻",23);
     }
 }
