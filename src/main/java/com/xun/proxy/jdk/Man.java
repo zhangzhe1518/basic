@@ -8,6 +8,11 @@ public class Man implements Person{
 
     @Override
     public void eat(String name,int age) {
-        System.out.printf("名字：%s，年芳：%s%n 想吃饭了",name,age);
+        System.out.println("名字："+name+"，年芳："+age+"开始吃大餐");
+    }
+
+    @Override
+    public void say() {
+        System.out.println("Hello");
     }
 }

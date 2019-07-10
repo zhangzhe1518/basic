@@ -17,6 +17,8 @@ public class JdkProxytest {
                 new JdkProxyInvocation(man)
         );
 
-        person.eat("寻",23);
+        person.eat("张莉",18);
+        System.out.println("============================");
+        person.say();
     }
 }
