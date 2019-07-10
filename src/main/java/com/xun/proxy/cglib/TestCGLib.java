@@ -1,6 +1,5 @@
 package com.xun.proxy.cglib;
 
-import org.springframework.util.Assert;
 
 /**
  * @Author zhangzhe
